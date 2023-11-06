@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BajasComponent } from './bajas/bajas.component';
 import { ProductosComponent } from './productos/productos.component';
 import { AltasComponent } from './altas/altas.component';
+import { CambiosComponent } from './cambios/cambios.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AltasComponent } from './altas/altas.component';
     BajasComponent,
     ClienteComponent,
     ProductosComponent,
-    AltasComponent
+    AltasComponent,
+    CambiosComponent
   ],
   imports: [
     BrowserModule,

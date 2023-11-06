@@ -7,6 +7,7 @@ import { ProovedorComponent } from './proovedor/proovedor.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { BajasComponent } from './bajas/bajas.component';
 import { AltasComponent } from './altas/altas.component';
+import { CambiosComponent } from './cambios/cambios.component';
 
 const routes: Routes = [
   { path: 'producto', component: ProductosComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'doctor', component: DoctorComponent },
   {path: 'bajas', component: BajasComponent},
   {path: 'altas', component: AltasComponent},
+  {path: 'cambios', component: CambiosComponent},
   { path: '', redirectTo: '/producto', pathMatch: 'full' },
 ];
 
