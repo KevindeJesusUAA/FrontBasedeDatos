@@ -4,9 +4,35 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Farmacia</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     </head>
     <body>
-        
+        <div class="contenedor col-md-6"> 
+            <h1>Doctor</h1>
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="nombreDoctor" class="form-label">Nombre:</label>
+                    <input required type="text" class="form-control" id="nombreDoctor" name="nombreDoctor">
+                </div>
+                <div class="col-12">
+                    <label for="edadDoctor" class="form-label">Edad:</label>
+                    <input required type="number" class="form-control" id="edadDoctor" name="edadDoctor">
+                </div>
+                <div class="col-12">
+                    <label for="direccionDoctor" class="form-label">Dirección:</label>
+                    <input required type="text" class="form-control" id="direccionDoctor" name="direccionDoctor">
+                </div>
+                <div class="col-12">
+                    <label for="telefonoDoctor" class="form-label">Teléfono:</label>
+                    <input required type="number" class="form-control" id="telefonoDoctor" name="telefonoDoctor">
+                </div>
+                <div class="col-12">
+                    <label for="turnoDoctor" class="form-label">Turno:</label>
+                    <input required type="number" class="form-control" id="turnoDoctor" name="turnoDoctor">
+                </div>
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" onclick="altas()">Registrar</button>
+                </div>
+            </div>
+        </div> 
     </body>
 </html>
