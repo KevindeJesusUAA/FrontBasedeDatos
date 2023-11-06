@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BajasComponent } from './bajas/bajas.component';
 import { AltasComponent } from './altas/altas.component';
+import { CambiosComponent } from './cambios/cambios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     BajasComponent,
-    AltasComponent
+    AltasComponent,
+    CambiosComponent
   ],
   imports: [
     BrowserModule,

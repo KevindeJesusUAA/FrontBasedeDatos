@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DbclientService } from '../dbclient.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-altas',
@@ -34,5 +36,7 @@ export class AltasComponent {
         console.log(error);
       }
     );
+  
   }
+
 }
