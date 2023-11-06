@@ -4,15 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Farmacia</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     </head>
     <body>
         <div class="menu">
-            <select class="form-select" id="menuTabla" aria-label="Default select example" onchange="menuTabla()">
+            <select class="form-select" [(ngModel)]="selectedOption" (change)="navigateToForm()">
                 <option value="producto" selected>Producto</option>
                 <option value="empleado">Empleado</option>
                 <option value="cliente">Cliente</option>
                 <option value="proveedor">Proveedor</option>
+                <option value="doctor">Doctor</option>
             </select>
         </div>
     </body>

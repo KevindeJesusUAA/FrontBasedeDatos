@@ -9,10 +9,13 @@ import { VistasComponent } from './vistas/vistas.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { MenuComponent } from './menu/menu.component';
+
 import { ClienteComponent } from './cliente/cliente.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BajasComponent } from './bajas/bajas.component';
+import { ProductosComponent } from './productos/productos.component';
+import { AltasComponent } from './altas/altas.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { BajasComponent } from './bajas/bajas.component';
     EmpleadoComponent,
     MenuComponent,
     ProovedorComponent,
-    VistasComponent,
+    BajasComponent,
     ClienteComponent,
-    BajasComponent
+    ProductosComponent,
+    AltasComponent
   ],
   imports: [
     BrowserModule,

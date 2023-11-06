@@ -1,35 +1,34 @@
-<div class="contenedor">
-  <form>
-    <div class="form-group row">
-      <label for="pnombre" class="col-sm-2 col-form-label">Nombre proovedor</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="pnombre">
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Farmacia</title>
+  </head>
+  <body>
+    <div class="contenedor col-md-6"> 
+      <h1>Proveedor</h1> 
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="nombreProveedor" class="form-label">Nombre:</label>
+          <input required name="nombreProveedor" type="text" class="form-control" id="nombreProveedor">
+        </div>
+        <div class="col-12">
+          <label for="edadProveedor" class="form-label">Edad:</label>
+          <input required name="edadProveedor" type="number" class="form-control" id="edadProveedor">
+        </div>
+        <div class="col-12">
+          <label for="telefonoProveedor" class="form-label">Teléfono:</label>
+          <input required name="telefonoProveedor" type="number" class="form-control" id="telefonoProveedor">
+        </div>
+        <div class="col-12">
+          <label for="direccionProveedor" class="form-label">Dirección:</label>
+          <input type="text" class="form-control" id="direccionProveedor" name="direccionProveedor" required>
+        </div>
+        <div class="col-12" id="btn">
+          <button class="btn btn-primary" onclick="altas()">Registrar</button>
+        </div>
       </div>
     </div>
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Edad Prooveedor</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="pedad">
-      </div>
-    </div>
-  
-    <div class="form-group row">
-      <label for="pnombre" class="col-sm-2 col-form-label">Telefono Proovedor</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="ptelefono">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Direccion Proovedor</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="pdireccion">
-      </div>
-    </div>
-  
-    <div class="form-group row">
-      <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Dar de alta</button>
-      </div>
-    </div>
-  </form>
-</div>
+  </body>
+</html>
