@@ -22,24 +22,28 @@
         <h1>Producto</h1>
         <div class="row g-3">
             <div class="col-12">
+              <label for="idProducto" class="form-label">ID:</label>
+              <input [(ngModel)]="id" required type="number" class="form-control" id="idProducto" name="idProducto">
+            </div>
+            <div class="col-12">
                 <label for="nombreProducto" class="form-label">Nombre:</label>
-                <input required name="nombreProducto" type="text" class="form-control" id="nombreProducto">
+                <input [(ngModel)]="nombre" required name="nombreProducto" type="text" class="form-control" id="nombreProducto">
             </div>
             <div class="col-12">
                 <label for="marcaProducto" class="form-label">Marca:</label>
-                <input required name="marcaProducto" type="text" class="form-control" id="marcaProducto">
+                <input [(ngModel)]="marca" required name="marcaProducto" type="text" class="form-control" id="marcaProducto">
             </div>
             <div class="col-12">
                 <label for="costoProducto" class="form-label">Costo:</label>
-                <input required name="costoProducto" type="number" class="form-control" id="costoProducto">
+                <input [(ngModel)]="costo" required name="costoProducto" type="number" class="form-control" id="costoProducto">
             </div>
             <div class="col-12">
                 <label for="existenciaProducto" class="form-label">Existencia:</label>
-                <input type="number" class="form-control" id="existenciaProducto" name="existenciaProducto"
+                <input [(ngModel)]="existencia" type="number" class="form-control" id="existenciaProducto" name="existenciaProducto"
                     required>
             </div>
             <div class="col-12" id="btn">
-                <button class="btn btn-primary" onclick="altas()">Registrar</button>
+                <button class="btn btn-primary" (click)="altaProducto()">Registrar</button>
             </div>
         </div>
       </div>
@@ -51,27 +55,31 @@
         <h1>Empleado</h1>
         <div class="row g-3">
             <div class="col-12">
+              <label for="idEmpleado" class="form-label">ID:</label>
+              <input [(ngModel)]="id" required type="number" class="form-control" id="idEmpelado" name="idEmpleado">
+            </div>
+            <div class="col-12">
                 <label for="nombreEmpleado" class="form-label">Nombre:</label>
-                <input required type="text" class="form-control" id="nombreEmpleado" name="nombreEmpleado">
+                <input [(ngModel)]="nombre" required type="text" class="form-control" id="nombreEmpleado" name="nombreEmpleado">
             </div>
             <div class="col-12">
                 <label for="edadEmpleado" class="form-label">Edad:</label>
-                <input required type="number" class="form-control" id="edadEmpleado" name="edadEmpleado">
+                <input [(ngModel)]="edad" required type="text" class="form-control" id="edadEmpleado" name="edadEmpleado">
             </div>
             <div class="col-12">
                 <label for="direccionEmpleado" class="form-label">Dirección:</label>
-                <input required type="text" class="form-control" id="direccionEmpleado" name="direccionEmpleado">
+                <input [(ngModel)]="direccion" required type="text" class="form-control" id="direccionEmpleado" name="direccionEmpleado">
             </div>
             <div class="col-12">
                 <label for="telefonoEmpleado" class="form-label">Teléfono:</label>
-                <input required type="number" class="form-control" id="telefonoEmpleado" name="telefonoEmpleado">
+                <input [(ngModel)]="telefono" required type="text" class="form-control" id="telefonoEmpleado" name="telefonoEmpleado">
             </div>
             <div class="col-12">
                 <label for="sueldoEmpleado" class="form-label">Sueldo:</label>
-                <input required type="number" class="form-control" id="sueldoEmpleado" name="sueldoEmpleado">
+                <input [(ngModel)]="suedo" required type="number" class="form-control" id="sueldoEmpleado" name="sueldoEmpleado">
             </div>
             <div class="col-12" id="btn">
-                <button class="btn btn-primary" onclick="altas()">Registrar</button>
+                <button class="btn btn-primary" (click)="altaEmpleado()">Registrar</button>
             </div>
         </div>
       </div>
@@ -83,12 +91,16 @@
         <h1>Cliente</h1>  
         <div class="row g-3">
             <div class="col-12">
+              <label for="idCliente" class="form-label">ID:</label>
+              <input [(ngModel)]="id" required type="number" class="form-control" id="idCliente" name="idCliente">
+            </div>
+            <div class="col-12">
                 <label for="nombreCliente" class="form-label">Nombre:</label>
                 <input [(ngModel)]="nombre" required type="text" class="form-control" id="nombreCliente" name="nombreCliente">
             </div>
             <div class="col-12">
                 <label for="edadCliente" class="form-label">Edad:</label>
-                <input [(ngModel)]="edad" required type="number" class="form-control" id="edadCliente" name="edadCliente">
+                <input [(ngModel)]="edad" required type="text " class="form-control" id="edadCliente" name="edadCliente">
             </div>
             <div class="col-12">
                 <label for="telefonoCliente" class="form-label">Teléfono:</label>
@@ -100,7 +112,7 @@
             </div>
         </div>
         <div class="col-12" id="btn">
-            <button class="btn btn-primary" (click)="onSubmit()" type="submit">Registrar</button>
+            <button class="btn btn-primary" (click)="altaCliente()">Registrar</button>
         </div>
       </div> 
     </div>
@@ -111,23 +123,27 @@
         <h1>Proveedor</h1> 
         <div class="row g-3">
           <div class="col-12">
+            <label for="idProveedor" class="form-label">ID:</label>
+            <input [(ngModel)]="id" required type="number" class="form-control" id="idProveedor" name="idProveedor">
+          </div>
+          <div class="col-12">
             <label for="nombreProveedor" class="form-label">Nombre:</label>
-            <input required name="nombreProveedor" type="text" class="form-control" id="nombreProveedor">
+            <input [(ngModel)]="nombre" required name="nombreProveedor" type="text" class="form-control" id="nombreProveedor">
           </div>
           <div class="col-12">
             <label for="edadProveedor" class="form-label">Edad:</label>
-            <input required name="edadProveedor" type="number" class="form-control" id="edadProveedor">
+            <input [(ngModel)]="edad" required name="edadProveedor" type="text" class="form-control" id="edadProveedor">
           </div>
           <div class="col-12">
             <label for="telefonoProveedor" class="form-label">Teléfono:</label>
-            <input required name="telefonoProveedor" type="number" class="form-control" id="telefonoProveedor">
+            <input [(ngModel)]="telefono" required name="telefonoProveedor" type="text" class="form-control" id="telefonoProveedor">
           </div>
           <div class="col-12">
             <label for="direccionProveedor" class="form-label">Dirección:</label>
-            <input type="text" class="form-control" id="direccionProveedor" name="direccionProveedor" required>
+            <input [(ngModel)]="direccion" type="text" class="form-control" id="direccionProveedor" name="direccionProveedor" required>
           </div>
           <div class="col-12" id="btn">
-            <button class="btn btn-primary" onclick="altas()">Registrar</button>
+            <button class="btn btn-primary" (click)="altaProveedor()">Registrar</button> 
           </div>
         </div>
       </div>
@@ -138,27 +154,31 @@
         <h1>Doctor</h1>
         <div class="row g-3">
             <div class="col-12">
+              <label for="idDoctor" class="form-label">ID:</label>
+              <input [(ngModel)]="id" required type="number" class="form-control" id="idDoctor" name="idDoctor">
+            </div>
+            <div class="col-12">
                 <label for="nombreDoctor" class="form-label">Nombre:</label>
-                <input required type="text" class="form-control" id="nombreDoctor" name="nombreDoctor">
+                <input [(ngModel)]="nombre" required type="text" class="form-control" id="nombreDoctor" name="nombreDoctor">
             </div>
             <div class="col-12">
                 <label for="edadDoctor" class="form-label">Edad:</label>
-                <input required type="number" class="form-control" id="edadDoctor" name="edadDoctor">
+                <input [(ngModel)]="edad" required type="text" class="form-control" id="edadDoctor" name="edadDoctor">
             </div>
             <div class="col-12">
                 <label for="direccionDoctor" class="form-label">Dirección:</label>
-                <input required type="text" class="form-control" id="direccionDoctor" name="direccionDoctor">
+                <input [(ngModel)]="direccion" required type="text" class="form-control" id="direccionDoctor" name="direccionDoctor">
             </div>
             <div class="col-12">
                 <label for="telefonoDoctor" class="form-label">Teléfono:</label>
-                <input required type="number" class="form-control" id="telefonoDoctor" name="telefonoDoctor">
+                <input [(ngModel)]="telefono" required type="text" class="form-control" id="telefonoDoctor" name="telefonoDoctor">
             </div>
             <div class="col-12">
                 <label for="turnoDoctor" class="form-label">Turno:</label>
-                <input required type="number" class="form-control" id="turnoDoctor" name="turnoDoctor">
+                <input [(ngModel)]="turno" required type="text" class="form-control" id="turnoDoctor" name="turnoDoctor">
             </div>
             <div class="col-12" id="btn">
-                <button class="btn btn-primary" onclick="altas()">Registrar</button>
+                <button class="btn btn-primary" (click)="altaDoctor()">Registrar</button>
             </div>
         </div>
       </div>

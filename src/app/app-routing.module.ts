@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: 'altas', component: AltasComponent},
   {path: 'cambios', component: CambiosComponent},
   { path: '', redirectTo: '/altas', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
