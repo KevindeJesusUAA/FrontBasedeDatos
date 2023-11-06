@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VistasComponent } from './vistas/vistas.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BajasComponent } from './bajas/bajas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VistasComponent
+    VistasComponent,
+    ClienteComponent,
+    BajasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
