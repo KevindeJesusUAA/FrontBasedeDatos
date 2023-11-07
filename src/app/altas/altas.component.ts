@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { DbclientService } from '../dbclient.service';
 import { Router } from '@angular/router';
-
+import { DbclientService } from '../dbclient.service';
 
 @Component({
   selector: 'app-altas',
@@ -12,12 +11,17 @@ export class AltasComponent {
   
   selectedOption: string = 'producto';
 
+  tabla:string = "cliente";
   nombre: string ="";
   edad: number =0;
   telefono: string ="";
   direccion: string ="";
 
-  constructor(private servicio:DbclientService) { }
+  constructor(private router: Router, private servicio: DbclientService){}
+
+  cargarTabla(){
+    //this.router.navigate([this.tabla]);
+  }
 
   onSubmit(){
     const cliente = {
@@ -37,6 +41,8 @@ export class AltasComponent {
       }
     );
   
+
+    
   }
 
 }

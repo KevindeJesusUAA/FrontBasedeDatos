@@ -16,7 +16,7 @@ import { CambiosComponent } from './cambios/cambios.component';
   declarations: [
     AppComponent,
     MenuComponent,
-    BajasComponent,
+    BajasComponent,    
     AltasComponent,
     CambiosComponent
   ],
