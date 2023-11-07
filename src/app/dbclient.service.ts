@@ -12,6 +12,22 @@ export class DbclientService {
     return this.http.post('http://localhost:3000/alta', datos);
   }
 
+  altaCliente(datos:any){
+    return this.http.post('http://localhost:3000/cliente_new', datos)
+  }
+  altaEmpleado(datos:any){
+    return this.http.post('http://localhost:3000/empleado_new', datos)
+  }
+  altaProveedor(datos:any){
+    return this.http.post('http://localhost:3000/proveedor_new', datos)
+  }
+  altaDoctor(datos:any){
+    return this.http.post('http://localhost:3000/doctor_new', datos)
+  }
+  altaProducto(datos:any){
+    return this.http.post('http://localhost:3000/producto_new', datos)
+  }
+
   baja(datos:any){
     return this.http.post('http://localhost:3000/baja', datos);
   }
