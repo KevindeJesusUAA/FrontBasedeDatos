@@ -18,48 +18,17 @@
       </div>
     </div>
     <div class="row g-3">
-        <table *ngIf="descripcionTabla && tabla!='producto'" class="table table-striped table-hover">
+        <table *ngIf="descripcionTabla" class="table table-striped table-hover">
             <thead>
               <tr>
-                <th>ID {{tabla}}</th>
-                <th>Nombre {{tabla}}</th>
-                <th>Edad {{tabla}}</th>
-                <th>Teléfono {{tabla}}</th>
-                <th>Dirección {{tabla}}</th>
-                <th>Editar {{tabla}}</th>
+                <td *ngFor="let campo of descripcionTabla">{{campo | uppercase}}</td>
+                <td>EDITAR {{tabla | uppercase}}</td>
               </tr>
             </thead>
-            <tbody>
-              <tr *ngFor="let campo of descripcionTabla">
-                <td>{{ campo.id }}</td>
-                <td>{{ campo.nombre }}</td>
-                <td>{{ campo.edad }}</td>
-                <td>{{ campo.telefono }}</td>
-                <td>{{ campo.direccion }}</td>
-                <td><button type="button" class="btn btn-primary" (click)="cambio(campo)">Editar</button></td>
-              </tr>
-            </tbody>
-        </table>
-        
-        <table *ngIf="descripcionTabla && tabla=='producto'" class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th>ID Producto</th>
-                <th>Nombre Producto</th>
-                <th>Marca Producto</th>
-                <th>Costo Producto</th>
-                <th>Existencia Producto</th>
-                <th>Editar Producto</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let campo of descripcionTabla">
-                <td>{{ campo.idProducto }}</td>
-                <td>{{ campo.nombreProducto }}</td>
-                <td>{{ campo.marcaProducto }}</td>
-                <td>{{ campo.costoProducto }}</td>
-                <td>{{ campo.existenciaProducto }}</td>
-                <td><button type="button" class="btn btn-primary" (click)="cambio(campo)">Editar</button></td>
+            <tbody *ngIf="datosTabla">
+              <tr *ngFor="let dato of datosTabla">
+                <td *ngFor="let propiedad of descripcionTabla">{{dato[propiedad]}}</td>
+                <td><button type="button" class="btn btn-primary" (click)="editar(dato)">Editar</button></td>
               </tr>
             </tbody>
         </table>
