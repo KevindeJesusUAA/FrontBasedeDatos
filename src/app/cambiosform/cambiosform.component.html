@@ -1,0 +1,30 @@
+<div class="contenedorPrincipal">
+    <div class="row g-3">
+      <input type="hidden" id="operacion" value="altas">
+      <div class="col-md-10">
+        <h1>Cambios</h1>
+      </div>
+      <div class="col-md-2">
+        <div class="menu">
+          
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div *ngIf="tabla"> 
+        <div class="contenedor col-md-6"> 
+          <h1>{{tabla}}</h1>
+          <div class="row g-3">
+              <div class="col-12" *ngFor="let propiedad of propiedades" >
+                  <label for="nombreProducto" class="form-label">{{propiedad}}:</label>
+                  <input required value="{{registro[propiedad]}}" name="nombreProducto" type="text" class="form-control" id="nombreProducto">
+              </div>
+              <div class="col-12" id="btn">
+                <button class="btn btn-primary" onclick="cambios()">Registrar</button>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

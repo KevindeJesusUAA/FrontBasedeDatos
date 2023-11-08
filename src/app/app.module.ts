@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BajasComponent } from './bajas/bajas.component';
 import { AltasComponent } from './altas/altas.component';
 import { CambiosComponent } from './cambios/cambios.component';
+import { CambiosformComponent } from './cambiosform/cambiosform.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CambiosComponent } from './cambios/cambios.component';
     MenuComponent,
     BajasComponent,   
     AltasComponent,
-    CambiosComponent
+    CambiosComponent,
+    CambiosformComponent
   ],
   imports: [
     BrowserModule,

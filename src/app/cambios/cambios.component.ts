@@ -13,29 +13,30 @@ export class CambiosComponent {
 
   tabla:string = 'cliente';
   descripcionTabla:any;
+  datosTabla:any;
 
   ngOnInit(): void {
     this.cargarTabla();
   }
 
   cargarTabla(){
-    /*this.servicio.describirTabla({tabla:this.tabla}).subscribe(
-      (datos:any) => {
-        console.log(datos);
-        this.descripcionTabla = datos;
-      }
-    );*/
-
-    this.descripcionTabla = [{ id: 'id', nombre: 'int(11)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'nombre', nombre: 'varchar(255)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'edad', nombre: 'int(11)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'telefono', nombre: 'varchar(255)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'direccion', nombre: 'varchar(255)', edad: 'NO', telefono: 'PRI', direccion: null}];
+    this.servicio.consultarDatos(this.tabla).then((data) => {
+      this.datosTabla = data;
+      this.datosTabla = this.datosTabla.array;
+      this.descripcionTabla = Object.keys(this.datosTabla[0]);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
-  cambio(campo:any){
-    campo = this.descripcionTabla[1];
-    console.log(campo);
-    this.router.navigate(['/alta']);
+  editar(registro:any){
+
+    const obj = {
+      tabla: this.tabla,
+      registro: registro
+    }
+
+    this.router.navigate(['/cambiosform'], {state: {obj}});
   }
 }
