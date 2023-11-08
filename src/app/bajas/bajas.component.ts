@@ -17,30 +17,32 @@ export class BajasComponent implements OnInit{
     this.cargarTabla();
   }
 
+  //se muestran los datos de la tabla en donde estemos posicionados
   cargarTabla(){
-    /*this.servicio.describirTabla({tabla:this.tabla}).subscribe(
-      (datos:any) => {
-        console.log(datos);
-        this.descripcionTabla = datos;
-      }
-    );*/
-
-    this.descripcionTabla = [{ id: 'id', nombre: 'int(11)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'nombre', nombre: 'varchar(255)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'edad', nombre: 'int(11)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'telefono', nombre: 'varchar(255)', edad: 'NO', telefono: 'PRI', direccion: null},
-    { id: 'direccion', nombre: 'varchar(255)', edad: 'NO', telefono: 'PRI', direccion: null}];
+      this.servicio.describirTabla(this.tabla).then((data) => {
+        this.descripcionTabla = data;
+        this.descripcionTabla = this.descripcionTabla.array;
+        console.log(this.descripcionTabla);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
-  baja(campo:string){
-    /*this.servicio.baja({tabla:this.tabla, campo:campo}).subscribe(
-      (datos:any) => {
-        console.log(datos);
-      }
-    );*/
-    
+  baja(id:number){
+    // Asumiendo que tienes una función en tu servicio que realiza la eliminación
+    this.servicio.eliminarRegistro(this.tabla, id)
+      .then((data) => {
+        console.log(data);
+        // Verificar si la operación de eliminación fue exitosa
+          console.log(`Registro con ID ${id} eliminado con éxito`);
+          // Vuelve a cargar la tabla para mostrar los datos actualizados
+          this.cargarTabla();  
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
-
   
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DbclientService } from '../dbclient.service';
 import { Router } from '@angular/router';
+import { DbclientService } from '../dbclient.service';
 
 @Component({
   selector: 'app-altas',
