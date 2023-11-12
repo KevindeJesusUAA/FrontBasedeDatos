@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbclientService } from '../dbclient.service';
 
 @Component({
   selector: 'app-cambiosform',
@@ -10,9 +11,10 @@ export class CambiosformComponent implements OnInit {
   tabla:string = "";
   registro:any;
   propiedades:any;
+  resultado:any;
 
 
-  constructor() { }
+  constructor(private servicio:DbclientService) { }
 
   ngOnInit() {
     this.registro = history.state.obj;
@@ -23,8 +25,11 @@ export class CambiosformComponent implements OnInit {
 
   cambios(){
     // llamar a la api para guardar los cambios
-    
+  /*this.servicio.cambio(this.tabla).then((data) => {
+      this.resultado = data;
+    })
+    .catch((err) => {
+      console.log(err); 
+    });*/
   }
-    
-
 }

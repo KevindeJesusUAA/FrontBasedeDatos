@@ -15,9 +15,10 @@
         <div class="contenedor col-md-6"> 
           <h1>{{tabla}}</h1>
           <div class="row g-3">
-              <div class="col-12" *ngFor="let propiedad of propiedades" >
+              <div class="col-12" *ngFor="let propiedad of propiedades; let i = index">
                   <label for="nombreProducto" class="form-label">{{propiedad}}:</label>
-                  <input required value="{{registro[propiedad]}}" name="nombreProducto" type="text" class="form-control" id="nombreProducto">
+                  <input *ngIf="i==0" disabled required value="{{registro[propiedad]}}" name="registro" type="text" class="form-control" id="nombreProducto">
+                  <input *ngIf="i!=0"required value="{{registro[propiedad]}}" name="registro" type="text" class="form-control" id="nombreProducto">
               </div>
               <div class="col-12" id="btn">
                 <button class="btn btn-primary" onclick="cambios()">Registrar</button>

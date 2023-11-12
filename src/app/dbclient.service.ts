@@ -18,7 +18,7 @@ export class DbclientService {
   }
 
   cambio(datos:any){
-    return this.http.post('http://localhost:3000/cambio', datos);
+    datos = JSON.stringify(datos);
   }
 
   consulta(datos:any){
@@ -36,11 +36,8 @@ export class DbclientService {
         return this.http.get('http://localhost:3000/proveedor_all').toPromise();
       case 'empleado':
         return this.http.get('http://localhost:3000/empleado_all').toPromise();
-      case 'doctor':
-        return this.http.get('http://localhost:3000/doctor_all').toPromise();
       default:
-        return this.http.get('http://localhost:3000/cliente_all').toPromise();
-
+        return this.http.get('http://localhost:3000/doctor_all').toPromise();
     } 
   }
 }

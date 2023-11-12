@@ -27,10 +27,10 @@
             </thead>
             <tbody *ngIf="datosTabla">
               <tr *ngFor="let dato of datosTabla">
-                <td *ngFor="let propiedad of descripcionTabla">{{dato[propiedad]}}</td>
+                <td  *ngFor="let propiedad of descripcionTabla">{{dato[propiedad]}}</td>
                 <td><button type="button" class="btn btn-primary" (click)="editar(dato)">Editar</button></td>
               </tr>
-            </tbody>
+            </tbody> 
         </table>
     </div>
   </div> 
