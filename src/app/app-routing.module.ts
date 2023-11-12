@@ -9,7 +9,9 @@ const routes: Routes = [
   {path: 'bajas', component: BajasComponent},
   {path: 'altas', component: AltasComponent},
   {path: 'cambios', component: CambiosComponent},
+  { path: '', redirectTo: '/altas', pathMatch: 'full' },
   {path: 'cambiosform', component: CambiosformComponent},
+  { path: '', redirectTo: '/producto', pathMatch: 'full' },
   { path: '', redirectTo: '/producto', pathMatch: 'full' },
   { path: '', redirectTo: '', pathMatch: 'full' },
 ];
