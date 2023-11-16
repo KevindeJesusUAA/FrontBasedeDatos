@@ -20,12 +20,11 @@ export class CambiosformComponent implements OnInit {
     this.tabla = this.registro.tabla;
     this.registro = this.registro.registro;
     this.propiedades = Object.keys(this.registro);
-    
   }
 
   isNumber(propiedad:string):boolean{
-    return propiedad.includes("edad") || propiedad.includes("costo") || propiedad.includes("existencia")
-    || propiedad.includes("sueldo")
+    return propiedad.includes("Edad") || propiedad.includes("Costo") || propiedad.includes("Existencia")
+    || propiedad.includes("Sueldo")
   }
 
   cambios(){
@@ -39,11 +38,13 @@ export class CambiosformComponent implements OnInit {
 
       this.servicio.cambio(obj).then((data) => {
         this.resultado = data;
+        console.log(this.resultado);
       })
       .catch((err) => {
         console.log(err); 
       });
 
+      console.log("Pasa a la BD!!");
     }else{
       console.log("NO pasa a la BD!!");
     }
@@ -51,7 +52,7 @@ export class CambiosformComponent implements OnInit {
 
   validaTelefono():boolean{
     for(let prop in this.registro){
-      if(prop.includes("telefono")){
+      if(prop.includes("Telefono")){
         if(/^[0-9]*$/.test(this.registro[prop])){
           return true;
         }else{
@@ -64,7 +65,7 @@ export class CambiosformComponent implements OnInit {
 
   validaNombre():boolean{
     for(let prop in this.registro){
-      if(prop.includes("nombre") || prop.includes("marca")){
+      if(prop.includes("Nombre") || prop.includes("Marca")){
         if(/^[a-zA-Z\s]*$/.test(this.registro[prop])){
           return true;
         }else{
@@ -77,8 +78,8 @@ export class CambiosformComponent implements OnInit {
 
   validaCosto():boolean{
     for(let prop in this.registro){
-      if(prop.includes("costo")){
-        if(/^[0-9]*$/.test(this.registro[prop])){
+      if(prop.includes("Costo") || prop.includes("Sueldo")){
+        if(/^[0-9]+(\.[0-9]*)?$/.test(this.registro[prop])){
           return true;
         }else{
           return false;
@@ -90,7 +91,7 @@ export class CambiosformComponent implements OnInit {
 
   validaTurno():boolean{
     for(let prop in this.registro){
-      if(prop.includes("turno")){
+      if(prop.includes("Turno")){
         if(/^(matutino|vespertino)$/i.test(this.registro[prop])){
           return true;
         }else{

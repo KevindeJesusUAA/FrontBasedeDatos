@@ -22,10 +22,6 @@
         <h1>Producto</h1>
         <div class="row g-3">
             <div class="col-12">
-              <label for="idProducto" class="form-label">ID:</label>
-              <input [(ngModel)]="id" required type="number" class="form-control" id="idProducto" name="idProducto">
-            </div>
-            <div class="col-12">
                 <label for="nombreProducto" class="form-label">Nombre:</label>
                 <input [(ngModel)]="nombre" required name="nombreProducto" type="text" class="form-control" id="nombreProducto">
             </div>
@@ -55,10 +51,6 @@
         <h1>Empleado</h1>
         <div class="row g-3">
             <div class="col-12">
-              <label for="idEmpleado" class="form-label">ID:</label>
-              <input [(ngModel)]="id" required type="number" class="form-control" id="idEmpelado" name="idEmpleado">
-            </div>
-            <div class="col-12">
                 <label for="nombreEmpleado" class="form-label">Nombre:</label>
                 <input [(ngModel)]="nombre" required type="text" class="form-control" id="nombreEmpleado" name="nombreEmpleado">
             </div>
@@ -76,7 +68,7 @@
             </div>
             <div class="col-12">
                 <label for="sueldoEmpleado" class="form-label">Sueldo:</label>
-                <input [(ngModel)]="suedo" required type="number" class="form-control" id="sueldoEmpleado" name="sueldoEmpleado">
+                <input [(ngModel)]="sueldo" required type="number" class="form-control" id="sueldoEmpleado" name="sueldoEmpleado">
             </div>
             <div class="col-12" id="btn">
                 <button class="btn btn-primary" (click)="altaEmpleado()">Registrar</button>
@@ -90,10 +82,6 @@
       <div class="contenedor col-md-6"> 
         <h1>Cliente</h1>  
         <div class="row g-3">
-            <div class="col-12">
-              <label for="idCliente" class="form-label">ID:</label>
-              <input [(ngModel)]="id" required type="number" class="form-control" id="idCliente" name="idCliente">
-            </div>
             <div class="col-12">
                 <label for="nombreCliente" class="form-label">Nombre:</label>
                 <input [(ngModel)]="nombre" required type="text" class="form-control" id="nombreCliente" name="nombreCliente">
@@ -110,10 +98,11 @@
                 <label for="direccionCliente" class="form-label">Dirección:</label>
                 <input [(ngModel)]="direccion" required type="text" class="form-control" id="direccionCliente" name="direccionCliente">
             </div>
+            <div class="col-12" id="btn">
+              <button class="btn btn-primary" (click)="altaCliente()">Registrar</button>
+          </div>
         </div>
-        <div class="col-12" id="btn">
-            <button class="btn btn-primary" (click)="altaCliente()">Registrar</button>
-        </div>
+        
       </div> 
     </div>
 
@@ -122,10 +111,6 @@
       <div class="contenedor col-md-6"> 
         <h1>Proveedor</h1> 
         <div class="row g-3">
-          <div class="col-12">
-            <label for="idProveedor" class="form-label">ID:</label>
-            <input [(ngModel)]="id" required type="number" class="form-control" id="idProveedor" name="idProveedor">
-          </div>
           <div class="col-12">
             <label for="nombreProveedor" class="form-label">Nombre:</label>
             <input [(ngModel)]="nombre" required name="nombreProveedor" type="text" class="form-control" id="nombreProveedor">
@@ -154,10 +139,6 @@
         <h1>Doctor</h1>
         <div class="row g-3">
             <div class="col-12">
-              <label for="idDoctor" class="form-label">ID:</label>
-              <input [(ngModel)]="id" required type="number" class="form-control" id="idDoctor" name="idDoctor">
-            </div>
-            <div class="col-12">
                 <label for="nombreDoctor" class="form-label">Nombre:</label>
                 <input [(ngModel)]="nombre" required type="text" class="form-control" id="nombreDoctor" name="nombreDoctor">
             </div>
@@ -177,10 +158,13 @@
                 <label for="turnoDoctor" class="form-label">Turno:</label>
                 <input [(ngModel)]="turno" required type="text" class="form-control" id="turnoDoctor" name="turnoDoctor">
             </div>
-            <div class="col-12" id="btn">
-                <button class="btn btn-primary" (click)="altaDoctor()">Registrar</button>
+            <div class="col-12">
+                <label for="sueldoDoctor" class="form-label">Sueldo:</label>
+                <input [(ngModel)]="sueldo" required type="text" class="form-control" id="sueldoDoctor" name="especialidadDoctor">
             </div>
-        </div>
+            <div class="col-12" id="btn">
+              <button class="btn btn-primary" (click)="altaDoctor()">Registrar</button>
+            </div>
       </div>
     </div>
 

@@ -9,10 +9,6 @@ export class DbclientService {
 
   constructor(private http:HttpClient) { }
 
-  alta(datos:any){
-    return this.http.post('http://localhost:3000/alta', datos);
-  }
-
   altaCliente(datos:any){
     return this.http.post('http://localhost:3000/cliente_new', datos)
   }
@@ -39,6 +35,7 @@ export class DbclientService {
     // Elimina el nombre de la tabla del objeto
     delete datos.tabla;
     datos = datos.registro;
+    
     
     switch(tabla){
       case 'cliente':

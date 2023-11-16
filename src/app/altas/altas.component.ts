@@ -17,7 +17,7 @@ export class AltasComponent {
   telefono: string = "";
   direccion: string ="";
   turno: string ="";
-  suedo: number=0;
+  sueldo: number=0;
   existencia: number=0;
   costo: number=0;
   id: number=0;
@@ -32,11 +32,10 @@ export class AltasComponent {
 
   altaCliente(){
     const cliente = {
-      idCliente: this.id,
-      cnombre: this.nombre,
-      cedad: this.edad,
-      ctelefono: this.telefono,
-      cdireccion: this.direccion
+      NombreCliente: this.nombre,
+      EdadCliente: this.edad,
+      TelefonoCliente: this.telefono,
+      DireccionCliente: this.direccion
     };
 
     this.servicio.altaCliente(cliente).subscribe(
@@ -51,12 +50,11 @@ export class AltasComponent {
 
   altaEmpleado(){
     const empleado = {
-      idEmpleado: this.id,
-      Enombre: this.nombre,
-      Etelefono: this.telefono,
-      Edireccion: this.direccion,
-      Eedad: this.edad,
-      suedo: this.suedo
+      NombreEmpleado: this.nombre,
+      TelefonoEmpleado: this.telefono,
+      DireccionEmpleado: this.direccion,
+      EdadEmpleado: this.edad,
+      SueldoEmpleado: this.sueldo
     };
 
     this.servicio.altaEmpleado(empleado).subscribe(
@@ -71,11 +69,10 @@ export class AltasComponent {
 
   altaProveedor(){
     const proveedor = {
-      idProveedor: this.id,
-      prnombre: this.nombre,
-      predad: this.edad,
-      prtelefono: this.telefono,
-      prdireccion: this.direccion
+      NombreProveedor: this.nombre,
+      EdadProveedor: this.edad,
+      TelefonoProveedor: this.telefono,
+      DireccionProveedor: this.direccion
     };
 
     this.servicio.altaProveedor(proveedor).subscribe(
@@ -90,12 +87,12 @@ export class AltasComponent {
 
   altaDoctor(){
     const doctor = {
-      idDoctor: this.id,
-      dnombre: this.nombre,
-      dedad: this.edad,
-      dtelefono: this.telefono,
-      ddireccion: this.direccion,
-      dturno: this.turno
+      NombreDoctor: this.nombre,
+      EdadDoctor: this.edad,
+      TelefonoDoctor: this.telefono,
+      DireccionDoctor: this.direccion,
+      TurnoDoctor: this.turno,
+      SueldoDoctor: this.sueldo
     };
 
     this.servicio.altaDoctor(doctor).subscribe(
@@ -110,11 +107,10 @@ export class AltasComponent {
 
   altaProducto(){
     const producto = {
-      idProducto: this.id,
-      pnombre: this.nombre,
-      pmarca: this.marca,
-      pcosto: this.costo,
-      pexitencia: this.existencia
+      NombreProducto: this.nombre,
+      MarcaProducto: this.marca,
+      CostoProducto: this.costo,
+      ExistenciaProducto: this.existencia
     };
 
     this.servicio.altaProducto(producto).subscribe(

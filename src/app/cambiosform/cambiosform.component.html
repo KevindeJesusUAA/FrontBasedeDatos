@@ -16,8 +16,7 @@
           <h1>{{tabla}}</h1>
           <div class="row g-3">
               <div class="col-12" *ngFor="let propiedad of propiedades; let i = index">
-                  <label for="registro" class="form-label">{{propiedad}}:</label>
-                  <input *ngIf="i==0" disabled required value="{{registro[propiedad]}}" [(ngModel)]="registro[propiedad]" name="registro" type="text" class="form-control">
+                  <label *ngIf="i!=0" for="registro" class="form-label">{{propiedad}}:</label>
                   <input *ngIf="i!=0 && isNumber(propiedad)"required value="{{registro[propiedad]}}" [(ngModel)]="registro[propiedad]" name="registro" type="number" class="form-control">
                   <input *ngIf="i!=0 && !isNumber(propiedad)"required value="{{registro[propiedad]}}" [(ngModel)]="registro[propiedad]" name="registro" type="text" class="form-control">
               </div>
