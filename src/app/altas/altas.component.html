@@ -56,7 +56,7 @@
             </div>
             <div class="col-12">
                 <label for="edadEmpleado" class="form-label">Edad:</label>
-                <input [(ngModel)]="edad" required type="text" class="form-control" id="edadEmpleado" name="edadEmpleado">
+                <input [(ngModel)]="edad" required type="number" class="form-control" id="edadEmpleado" name="edadEmpleado">
             </div>
             <div class="col-12">
                 <label for="direccionEmpleado" class="form-label">Dirección:</label>
@@ -88,7 +88,7 @@
             </div>
             <div class="col-12">
                 <label for="edadCliente" class="form-label">Edad:</label>
-                <input [(ngModel)]="edad" required type="text " class="form-control" id="edadCliente" name="edadCliente">
+                <input [(ngModel)]="edad" required type="number" class="form-control" id="edadCliente" name="edadCliente">
             </div>
             <div class="col-12">
                 <label for="telefonoCliente" class="form-label">Teléfono:</label>
@@ -117,7 +117,7 @@
           </div>
           <div class="col-12">
             <label for="edadProveedor" class="form-label">Edad:</label>
-            <input [(ngModel)]="edad" required name="edadProveedor" type="text" class="form-control" id="edadProveedor">
+            <input [(ngModel)]="edad" required name="edadProveedor" type="number" class="form-control" id="edadProveedor">
           </div>
           <div class="col-12">
             <label for="telefonoProveedor" class="form-label">Teléfono:</label>
@@ -144,7 +144,7 @@
             </div>
             <div class="col-12">
                 <label for="edadDoctor" class="form-label">Edad:</label>
-                <input [(ngModel)]="edad" required type="text" class="form-control" id="edadDoctor" name="edadDoctor">
+                <input [(ngModel)]="edad" required type="number" class="form-control" id="edadDoctor" name="edadDoctor">
             </div>
             <div class="col-12">
                 <label for="direccionDoctor" class="form-label">Dirección:</label>
@@ -160,7 +160,7 @@
             </div>
             <div class="col-12">
                 <label for="sueldoDoctor" class="form-label">Sueldo:</label>
-                <input [(ngModel)]="sueldo" required type="text" class="form-control" id="sueldoDoctor" name="especialidadDoctor">
+                <input [(ngModel)]="sueldo" required type="number" class="form-control" id="sueldoDoctor" name="especialidadDoctor">
             </div>
             <div class="col-12" id="btn">
               <button class="btn btn-primary" (click)="altaDoctor()">Registrar</button>
