@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DbclientService } from '../dbclient.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bajas',
@@ -38,9 +39,11 @@ export class BajasComponent implements OnInit{
           console.log(`Registro con ID ${id} eliminado con éxito`);
           // Vuelve a cargar la tabla para mostrar los datos actualizados
           this.cargarTabla();  
+          Swal.fire('Eliminación Exitosa', `Registro con ID ${id} eliminado con éxito`, 'success');
       })
       .catch((err) => {
         console.log(err);
+        Swal.fire('Error', 'Hubo un problema al eliminar el registro', 'error');
       });
   }
   

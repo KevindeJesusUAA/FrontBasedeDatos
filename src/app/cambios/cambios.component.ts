@@ -14,6 +14,7 @@ export class CambiosComponent {
   tabla:string = 'cliente';
   descripcionTabla:any;
   datosTabla:any;
+  aux:any;
 
   ngOnInit(): void {
     this.cargarTabla();
@@ -29,8 +30,7 @@ export class CambiosComponent {
       console.log(err);
     });
   }
-
-  editar(registro:any){
+ editar(registro:any){
 
     const obj = {
       tabla: this.tabla,
