@@ -6,12 +6,14 @@
     </div>
     <div class="col-md-2">
       <div class="menu">
-        <select class="form-select" [(ngModel)]="selectedOption">
+        <select class="form-select" [(ngModel)]="selectedOption" (change)="cambioSelect()">
           <option value="producto" selected>Producto</option>
           <option value="empleado">Empleado</option>
           <option value="cliente">Cliente</option>
           <option value="proveedor">Proveedor</option>
           <option value="doctor">Doctor</option>
+          <option value="pedido">Pedido</option>
+          <option value="consultar">Consulta</option>
         </select>
       </div>
     </div>
@@ -164,6 +166,68 @@
             </div>
             <div class="col-12" id="btn">
               <button class="btn btn-primary" (click)="altaDoctor()">Registrar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedOption === 'pedido'"> 
+      <div class="contenedor col-md-6"> 
+        <h1>Pedido</h1>
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="totalPedido" class="form-label">Total del Pedido:</label>
+                <input [(ngModel)]="totalPedido" required type="number" class="form-control" id="totalPedido" name="totalPedido">
+            </div>
+            <div class="col-12">
+                <label for="fechasPedido" class="form-label">Fecha del pedido:</label>
+                <input [(ngModel)]="fechasPedido" required type="date" class="form-control" id="fechasPedido" name="fechasPedido">
+            </div>
+            <div class="col-12">
+              <label for="idsproveedor" class="form-label">Proveedor:</label>
+              <select [(ngModel)]="idsProveedor" class="form-select" id="idsProducto" name="idsProducto" required>
+                <option *ngFor="let proveedor of aux" [value]="proveedor.id">{{ proveedor.nombre }}</option>
+              </select>
+            </div>
+            <div class="col-12">
+                <label for="statusPedido" class="form-label">Status del Pedido:</label>
+                <input [(ngModel)]="statusPedido" required type="text" class="form-control" id="statusPedido" name="statusPedido">
+            </div>
+            <div class="col-12" id="btn">
+              <button class="btn btn-primary" (click)="altaPedido()">Registrar</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="selectedOption === 'consultar'"> 
+      <div class="contenedor col-md-6"> 
+        <h1>Consulta</h1>
+        <div class="row g-3">
+            <div class="col-12">
+              <label for="idscliente" class="form-label">Cliente:</label>
+              <select [(ngModel)]="idsCliente" class="form-select" id="idscliente" name="idscliente" required>
+                <option *ngFor="let cliente of auxClie" [value]="cliente.id">{{ cliente.nombre }}</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="idsdosctor" class="form-label">Doctor:</label>
+              <select [(ngModel)]="idsDoctor" class="form-select" id="idsdoctor" name="idsdoctor" required>
+                <option *ngFor="let doctor of auxDoc" [value]="doctor.id">{{ doctor.nombre }}</option>
+              </select>
+            </div>
+            <div class="col-12">
+                <label for="consultarPrecio" class="form-label">Precio de la Consulta:</label>
+                <input [(ngModel)]="consultarPrecio" required type="number" class="form-control" id="consultarPrecio" name="consultarPrecio">
+            </div>
+            <div class="col-12">
+                <label for="fechasConsulta" class="form-label">Fecha de la Consulta:</label>
+                <input [(ngModel)]="fechasConsulta" required type="date" class="form-control" id="fechasConsulta" name="fechasConsulta">
+            </div>
+            <div class="col-12" id="btn">
+              <button class="btn btn-primary" (click)="altaConsulta()">Registrar</button>
             </div>
       </div>
     </div>

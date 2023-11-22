@@ -24,7 +24,12 @@ export class DbclientService {
   altaProducto(datos:any){
     return this.http.post('http://localhost:3000/producto_new', datos)
   }
-
+  altaPedido(datos:any){
+    return this.http.post('http://localhost:3000/pedido_new', datos)
+  }
+  altaConsulta(datos:any){
+    return this.http.post('http://localhost:3000/consulta_new', datos)
+  }
   baja(datos:any){
     return this.http.post('http://localhost:3000/baja', datos);
   }
@@ -67,6 +72,10 @@ export class DbclientService {
         return this.http.get('http://localhost:3000/proveedor_all').toPromise();
       case 'empleado':
         return this.http.get('http://localhost:3000/empleado_all').toPromise();
+      case 'pedido':
+        return this.http.get('http://localhost:3000/pedido_all').toPromise();
+      case 'consulta':
+        return this.http.get('http://localhost:3000/consulta_all').toPromise();
       default:
         return this.http.get('http://localhost:3000/doctor_all').toPromise();
     } 
@@ -117,5 +126,18 @@ export class DbclientService {
       default:
         return this.http.get('http://localhost:3000/cliente_all').toPromise();
     }
+  }
+
+  consultarProveedores() {
+    return this.http.get('http://localhost:3000/proveedor_all').toPromise().then(
+      (response) => {
+        console.log("Respuesta del servidor:", response);
+        return response;
+      },
+      (error) => {
+        console.error("Error en la solicitud:", error);
+        throw error;
+      }
+    );
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DbclientService } from '../dbclient.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cambiosform',
@@ -39,14 +40,17 @@ export class CambiosformComponent implements OnInit {
       this.servicio.cambio(obj).then((data) => {
         this.resultado = data;
         console.log(this.resultado);
+        Swal.fire('Cambios Exitosos', 'Los cambios se realizaron con éxito', 'success');
       })
       .catch((err) => {
         console.log(err); 
+        Swal.fire('Error', 'Hubo un problema al realizar los cambios', 'error');
       });
 
       console.log("Pasa a la BD!!");
     }else{
       console.log("NO pasa a la BD!!");
+      Swal.fire('Error en Validación', 'Hay errores en los datos ingresados. Por favor, revisa nuevamente.', 'error');
     }
   }
 
