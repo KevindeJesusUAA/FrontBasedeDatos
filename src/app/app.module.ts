@@ -12,6 +12,7 @@ import { BajasComponent } from './bajas/bajas.component';
 import { AltasComponent } from './altas/altas.component';
 import { CambiosComponent } from './cambios/cambios.component';
 import { CambiosformComponent } from './cambiosform/cambiosform.component';
+import { ConsultasComponent } from './consultas/consultas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CambiosformComponent } from './cambiosform/cambiosform.component';
     BajasComponent,   
     AltasComponent,
     CambiosComponent,
-    CambiosformComponent
+    CambiosformComponent,
+    ConsultasComponent
   ],
   imports: [
     BrowserModule,
