@@ -34,6 +34,7 @@ export class DbclientService {
     return this.http.post('http://localhost:3000/baja', datos);
   }
 
+
   cambio(datos:any){
     // Recupera npmbre de la tabla
     let tabla = datos.tabla;
@@ -61,6 +62,7 @@ export class DbclientService {
     return this.http.get('http://localhost:3000/consulta', datos);
   }
 
+
   // Consultar datos tabla
   consultarDatos(tabla:string){
     switch(tabla){
@@ -76,11 +78,17 @@ export class DbclientService {
         return this.http.get('http://localhost:3000/pedido_all').toPromise();
       case 'consulta':
         return this.http.get('http://localhost:3000/consulta_all').toPromise();
+      case 'doctor':
+        return this.http.get('http://localhost:3000/doctor_all').toPromise();
       default:
         return this.http.get('http://localhost:3000/doctor_all').toPromise();
     } 
 }
-
+reporte1(nombre:String){
+  console.log("S");
+ 
+  return this.http.get(`http://localhost:3000/reporte1/${nombre}`).toPromise();
+}
   eliminarRegistro(tabla: string, id: number) {
     let endpoint: string;
     endpoint="";

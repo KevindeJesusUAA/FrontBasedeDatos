@@ -1,0 +1,45 @@
+<div class="contenedorPrincipal">
+    <div class="row g-3">
+      <input type="hidden" id="operacion" value="altas">
+      <div class="col-md-10">
+        <h1>Consultas</h1>
+      </div>
+      <div class="col-md-2">
+        <!--<div class="menu">
+          <select class="form-select" >
+            <option value="producto" selected>BIENVENIDO A LA SECCION DE CONSULTAS COMUNES</option>
+            <option value="empleado">Empleado</option>
+            <option value="cliente">Cliente</option>
+            <option value="proveedor">Proveedor</option>
+            <option value="doctor">Doctor</option>
+            <option value="pedido">Pedido</option>
+            <option value="consultar">Consulta</option>
+          </select>
+        </div>-->
+      </div>
+    </div>
+    <div class="row g-3">
+      <div > 
+        <div class="contenedor col-md-6"> 
+          <h6>BIENVENIDO A LA SECCION DE CONSULTAS FRECUENTES :)</h6>
+          <div class="row g-3">
+            <hr> 
+            <h6>Cosultas que tendra un doctor</h6>
+           
+            <h6>Seleccione un doctor</h6>
+            <div class="menu">
+                <select [(ngModel)]="idsDoctor" class="form-select"[(ngModel)]="nombredoctor" >
+                    <option *ngFor="let proveedor of aux" [value]="proveedor.id">{{ proveedor.nombre }}</option>
+                </select>
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" (click)="reporte1()" >Mostrar Reporte</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  
+
+    </div>
+  </div>
+  
