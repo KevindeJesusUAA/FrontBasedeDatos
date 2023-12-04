@@ -4,7 +4,7 @@
       <div class="col-md-10">
         <h1>Consultas</h1>
       </div>
-      <div class="col-md-2">
+      <div class="">
         <!--<div class="menu">
           <select class="form-select" >
             <option value="producto" selected>BIENVENIDO A LA SECCION DE CONSULTAS COMUNES</option>
@@ -18,24 +18,80 @@
         </div>-->
       </div>
     </div>
-    <div class="row g-3">
+    <div class="row ">
       <div > 
-        <div class="contenedor col-md-6"> 
+        <div class="contenedordif "> 
           <h6>BIENVENIDO A LA SECCION DE CONSULTAS FRECUENTES :)</h6>
           <div class="row g-3">
+            
+            <div id="htmlData">
+              <h1>{{titulo}}</h1>
+              <table *ngIf="muestra" class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <td *ngFor="let campo of descripcionTabla">{{campo | uppercase}}</td>
+                    
+                  </tr>
+                </thead>
+                
+                <tbody *ngIf="datosTabla">
+                  <tr *ngFor="let dato of datosTabla">
+                    <td  *ngFor="let propiedad of descripcionTabla">{{dato[propiedad]}}</td>
+                   
+                  </tr>
+                </tbody> 
+            </table>
+            <h3 *ngIf="tt">Suma de cantidad: {{totalres}}</h3>
+            <h3 *ngIf="tp">Total de resultados: {{totalpre}}</h3>
+
+            </div>
+         
+
             <hr> 
-            <h6>Cosultas que tendra un doctor</h6>
-           
-            <h6>Seleccione un doctor</h6>
+            <h6>Cosultas que tienen los doctores</h6>
             <div class="menu">
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" (click)="CrearVista1()" >Mostrar Reporte</button>
+                </div>
+            </div>
+            <h6>Productos y proveedores</h6>
+            <div class="menu">
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" (click)="crearvista2()" >Mostrar Reporte</button>
+                </div>
+            </div>
+            <h6>Ventas con clientes y empleados</h6>
+            <div class="menu">
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" (click)="crearvista3()" >Mostrar Reporte</button>
+                </div>
+            </div>
+            <h6>Ganancias de Doctores por meses</h6>
+            <div class="menu">
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" (click)="roll()" >Mostrar Reporte</button>
+                </div>
+            </div>
+            <h6>Productos con menos de 10 unidades </h6>
+            <div class="menu">
+                <div class="col-12" id="btn">
+                    <button class="btn btn-primary" (click)="roll()" >Mostrar Reporte</button>
+                </div>
+            </div>
+            <div class="menu">
+              <h6>Actualizar precios </h6>
+              <h6>Seleccionar el medicamento</h6>
                 <select [(ngModel)]="idsDoctor" class="form-select"[(ngModel)]="nombredoctor" >
                     <option *ngFor="let proveedor of aux" [value]="proveedor.id">{{ proveedor.nombre }}</option>
                 </select>
+                <h6>Porcentaje de incremento %</h6>
+                <input type="number"[(ngModel)]="procentaje"/>
+                
                 <div class="col-12" id="btn">
-                    <button class="btn btn-primary" (click)="reporte1()" >Mostrar Reporte</button>
+                    <button class="btn btn-primary"  (click)="pro2()"  >Mostrar Reporte</button>
                 </div>
               </div>
-          </div>
+          
         </div>
       </div>
   

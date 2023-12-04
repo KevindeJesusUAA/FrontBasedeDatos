@@ -61,6 +61,9 @@ export class DbclientService {
   consulta(datos:any){
     return this.http.get('http://localhost:3000/consulta', datos);
   }
+  actualiza(datos:any){
+    return this.http.get('http://localhost:3000/consulta', datos);
+  }
 
 
   // Consultar datos tabla
@@ -84,11 +87,44 @@ export class DbclientService {
         return this.http.get('http://localhost:3000/doctor_all').toPromise();
     } 
 }
-reporte1(nombre:String){
-  console.log("S");
+CrearVista1(){
  
-  return this.http.get(`http://localhost:3000/reporte1/${nombre}`).toPromise();
+ 
+  return this.http.get(`http://localhost:3000/reportegene`).toPromise();
 }
+crearVista2(){
+  //reportegenev2
+  return this.http.get(`http://localhost:3000/reportegenev2`).toPromise();
+}
+crearVista3(){
+  return this.http.get(`http://localhost:3000/sumvi3`).toPromise();
+}
+//suma count Vista1
+sumvi(){
+  return this.http.get(`http://localhost:3000/sumvi1`).toPromise();
+}
+llamarv3(){
+  //sumvi3l
+  return this.http.get(`http://localhost:3000/sumvi3l`).toPromise();
+}
+LlmarVista1(){
+  return this.http.get(`http://localhost:3000/reportegenem`).toPromise();
+}
+llamarv2(){
+  //sumvi1l
+  return this.http.get(`http://localhost:3000/sumvi1l`).toPromise();
+}
+rooll(){
+  //Roll
+  return this.http.get(`http://localhost:3000/Roll`).toPromise();
+}
+
+//pro1
+pro1(){
+  //Roll
+  return this.http.get(`http://localhost:3000/pro1`).toPromise();
+}
+
   eliminarRegistro(tabla: string, id: number) {
     let endpoint: string;
     endpoint="";
