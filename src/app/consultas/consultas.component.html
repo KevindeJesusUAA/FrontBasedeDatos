@@ -75,22 +75,10 @@
             <h6>Productos con menos de 10 unidades </h6>
             <div class="menu">
                 <div class="col-12" id="btn">
-                    <button class="btn btn-primary" (click)="roll()" >Mostrar Reporte</button>
+                    <button class="btn btn-primary" (click)="productos10()" >Mostrar Reporte</button>
                 </div>
             </div>
-            <div class="menu">
-              <h6>Actualizar precios </h6>
-              <h6>Seleccionar el medicamento</h6>
-                <select [(ngModel)]="idsDoctor" class="form-select"[(ngModel)]="nombredoctor" >
-                    <option *ngFor="let proveedor of aux" [value]="proveedor.id">{{ proveedor.nombre }}</option>
-                </select>
-                <h6>Porcentaje de incremento %</h6>
-                <input type="number"[(ngModel)]="procentaje"/>
-                
-                <div class="col-12" id="btn">
-                    <button class="btn btn-primary"  (click)="pro2()"  >Mostrar Reporte</button>
-                </div>
-              </div>
+            
           
         </div>
       </div>
