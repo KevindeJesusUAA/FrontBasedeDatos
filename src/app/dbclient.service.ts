@@ -124,6 +124,9 @@ pro1(){
   //Roll
   return this.http.get(`http://localhost:3000/pro1`).toPromise();
 }
+no(){
+  return this.http.get(`http://localhost:3000/no`).toPromise();
+}
 sueldo(){
   return this.http.get(`http://localhost:3000/sueldo`).toPromise();
 }

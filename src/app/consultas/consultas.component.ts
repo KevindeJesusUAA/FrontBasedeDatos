@@ -137,7 +137,37 @@ export class ConsultasComponent {
        console.log(err);
      });
   }
+  novendido(){
+    this.muestra=true;
+    this.servicio.no().then((datos) => {
+      console.log("segunda");
+     console.log(datos)
+     this.datosTabla = datos;
+     if (datos !== undefined ) {
+      this.otros=datos
+      //this.otros=this.otros.array;
+     
+      console.log(this.aux)
+      this.totalpre = this.otros[0].cantidad;
+    this.totalres = this.otros[0].fecha;
+    }
+
+   
+
+    setTimeout(() => {
+      this.generarpdf("Doctores y Clientes");
+    }, 3000);
+    
+     
+
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
   sueldo(){
+    this.muestra=true
     this.servicio.sueldo().then((datos) => {
      
       this.datosTabla = datos;
@@ -254,6 +284,7 @@ export class ConsultasComponent {
      });
   }
   productos10(){
+    this.muestra=true;
     this.servicio.pro1().then((datos) => {
      
       this.datosTabla = datos;
