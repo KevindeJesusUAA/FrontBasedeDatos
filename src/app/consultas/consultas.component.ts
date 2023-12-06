@@ -19,6 +19,7 @@ export class ConsultasComponent {
   idsProveedor: number=0;
   tt:boolean=false;
   tp:boolean=false;
+  muestra2:boolean=false;
 
   nombredoctor:String="";
   descripcionTabla:any;
@@ -30,6 +31,7 @@ export class ConsultasComponent {
   auxClie:any;
   tabla:string = 'cliente';
   procentaje:number=0;
+  cantidad:number=0;
   
   
 
@@ -339,20 +341,29 @@ export class ConsultasComponent {
     
        
      }
-
- 
-
-    
       //this.generarpdf("Doctores y Clientes");
- 
- 
      })
      .catch((err) => {
        console.log(err);
      });
 
   }
-  
+
+  calculaPrecioTotal(producto:string,cantidad:number){
+    const obj = {
+      producto: producto,
+      cantidad: cantidad
+    }
+    this.servicio.calcular_precio_total(obj).then((datos) => {
+      this.datosTabla = datos;
+      this.cantidad = this.datosTabla.array[0][`calcular_precio_total(\"${producto}\",${cantidad})`];
+      console.log(this.cantidad);
+      this.muestra2=true;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 }
 
 

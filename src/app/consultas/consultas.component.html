@@ -84,8 +84,21 @@
                     <button class="btn btn-primary" (click)="sueldo()" >Subir sueldo</button>
                 </div>
             </div>
-            
-          
+            <h6>Consulta total de un producto</h6>
+            <div class="menu">
+                <div class="col-12" id="btn">
+                  <input type="text" class="form-control" #producto placeholder="Nombre del producto">
+                  <input type="number" class="form-control" #cant placeholder="Cantidad a pedir">
+                </div>
+                <br>
+                <div *ngIf="muestra2">
+                  <p>Consulta total de un producto: {{cantidad}}</p>
+                </div>
+                <div class="col-12" id="btn">
+                  <button class="btn btn-primary" (click)="calculaPrecioTotal(producto.value,cant.valueAsNumber)">Consultar Precio</button>
+              </div>
+              
+            </div>
         </div>
       </div>
   

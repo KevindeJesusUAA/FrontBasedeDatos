@@ -189,6 +189,7 @@ sueldo(){
   }
 
   calcular_precio_total(datos:any){
-    return this.http.post('http://localhost:3000/function1', datos).toPromise();
+    console.log("datos", datos);
+    return this.http.get(`http://localhost:3000/function1/${datos.producto}/${datos.cantidad}`, datos).toPromise();
   }
 }
