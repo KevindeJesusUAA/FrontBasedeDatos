@@ -137,6 +137,32 @@ export class ConsultasComponent {
        console.log(err);
      });
   }
+  sueldo(){
+    this.servicio.sueldo().then((datos) => {
+     
+      this.datosTabla = datos;
+     this.datosTabla = this.datosTabla.array[0];
+     this.descripcionTabla = Object.keys(this.datosTabla[0]);
+     this.tt=false;
+
+     this.tp=false;
+     console.log("hoal")
+      console.log(this.datosTabla )
+      if (datos !== undefined ) {
+        setTimeout(() => {
+          this.generarpdf("Productos y proveedores menor de 10");
+        }, 3000);
+    
+       
+     }
+ 
+ 
+     })
+     .catch((err) => {
+       console.log(err);
+     });
+
+  }
 
   generarpdf(nombre:String){
     let DATA: any = document.getElementById('htmlData');

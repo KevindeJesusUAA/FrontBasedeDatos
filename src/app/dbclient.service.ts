@@ -124,6 +124,9 @@ pro1(){
   //Roll
   return this.http.get(`http://localhost:3000/pro1`).toPromise();
 }
+sueldo(){
+  return this.http.get(`http://localhost:3000/sueldo`).toPromise();
+}
 
   eliminarRegistro(tabla: string, id: number) {
     let endpoint: string;
