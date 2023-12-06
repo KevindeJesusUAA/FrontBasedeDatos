@@ -184,4 +184,8 @@ pro1(){
       }
     );
   }
+
+  calcular_precio_total(datos:any){
+    return this.http.post('http://localhost:3000/function1', datos).toPromise();
+  }
 }
